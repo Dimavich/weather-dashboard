@@ -1,0 +1,20 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Monntserrat, sans-serif;
+}
+
+#search-bar {
+    width: 250px;
+    height: 35px;
+    border: 2px solid #6c757d;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#search-btn {
+    height: 35px;
+    border: 2px solid #6c757d;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
