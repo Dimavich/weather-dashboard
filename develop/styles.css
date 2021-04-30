@@ -2,16 +2,19 @@
     padding: 0;
     margin: 0;
     font-family: Monntserrat, sans-serif;
+    background-color: #e9ecef;
 }
 
 #search-bar {
+    margin: auto;
     margin-top: 50px;
+    margin-bottom: 25px;
     width: 250px;
     height: 32px;
-    border: 2px solid #6c757d;
+    border: 2px solid white;
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
-    background-color: #dee2e6;
+    background-color:white;
     border-right: none;
 }
 
@@ -21,17 +24,15 @@ input[type="text"]{
     font-size: 18px;
 }
 
-input[placeholder] {
-    text-align: center;
-}
 
 #search-btn {
     position: relative;
+    background-color: white;
     bottom: 2px;
     margin-left: -5px;
     height: 36px;
     width: 30px;
-    border: 2px solid #6c757d;
+    border: 2px solid white;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     border-left: none;
@@ -40,4 +41,28 @@ input[placeholder] {
 
 i {
     color: #6c757d;
+    background-color: white;
+}
+
+.city-name {
+    margin: auto;
+    border: 2px solid black;
+    width: 80%;
+    text-align: center;  
+}
+
+#city {
+    font-size: 60px;
+    color: #212529;
+}
+
+#date {
+    font-size: 20px;
+    color: #6c757d;
+}
+.today img {
+    width: 150px;
+    height: 150px;
+    margin-top: 25px;
+    margin-left: -200px;
 }
