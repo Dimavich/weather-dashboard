@@ -1,8 +1,12 @@
 * {
     padding: 0;
     margin: 0;
-    font-family: Monntserrat, sans-serif;
+    font-family: Montserrat, sans-serif;
     background-color: #e9ecef;
+}
+
+i {
+    font-family: Montserrat, sans-serif;
 }
 
 #search-bar {
@@ -39,14 +43,13 @@ input[type="text"]{
     cursor: pointer;
 }
 
-i {
+#search-icon {
     color: #6c757d;
     background-color: white;
 }
 
 .city-name {
     margin: auto;
-    border: 2px solid black;
     width: 80%;
     text-align: center;  
 }
@@ -60,9 +63,23 @@ i {
     font-size: 20px;
     color: #6c757d;
 }
+
+.today p {
+    position: relative;
+    bottom: 160px;
+    left: 450px;
+    width: 200px;
+    text-align: left;
+    font-size: 20px;
+    color: #6c757d;
+    margin-top: 10px;
+}
+
 .today img {
     width: 150px;
     height: 150px;
     margin-top: 25px;
-    margin-left: -200px;
+    margin-left: -20em;
 }
+
+

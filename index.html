@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.13.0/css/all.css">
     <link rel="stylesheet" href="./develop/styles.css">
     <script src="./develop/scripts.js" defer></script>
     <title>Weather Dashboard</title>
@@ -16,7 +16,7 @@
         <div class="search">
             <form>
                 <input type="text" id="search-bar" name="city" placeholder="Search..">
-                <button type="submit" id="search-btn"><i class='fa fa-search'></i></button>
+                <button type="submit" id="search-btn"><i class='fa fa-search' id='search-icon'></i></button>
             </form>
         </div>
         <h1 id="city">Sacramento</h1>
@@ -24,10 +24,10 @@
     <!-- todays weather -->
         <div class="today">
             <img src="./images/Group 15.png" alt="weather icon" id="mainIcon" >
-            <h2 id="today-degrees">Degrees: 79°</h2>
-            <h3 id="humidity">Humidity: 75%</h3>
-            <h3 id="wind">Wind Speed: 10mph</h3>
-            <h4 id="uv">UV index: 9.49</h4>
+            <p id="today-temp"><i class="fas fa-temperature-high"></i>  Temp: 79°</p>
+            <p id="humidity"><i class="fas fa-water"></i>   Humidity: 75%</p>
+            <p id="wind"><i class="fas fa-wind"></i>    wind: 10mph</p>
+            <p id="uv"><i class="fas fa-sun"></i>   UV index: 9.49</p>
         </div>
     </div>
     <!-- 5 day forecast -->
