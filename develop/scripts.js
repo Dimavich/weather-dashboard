@@ -21,13 +21,10 @@ var day3humid = document.getElementById('day3Humid');
 var day4humid = document.getElementById('day4Humid');
 var day5humid = document.getElementById('day5Humid');
 
-
-
 // calling the current weather api
-function current (event){
+function weather (event){
   document.getElementById('hide1').style.visibility='visible';
 document.getElementById('hide2').style.visibility='visible';
-date.textContent='Current';
   event.preventDefault();
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchVal.value}&units=imperial&appid=deaeafb532c77ef1da766b428ecb34ef`, {
       method: 'GET'
@@ -36,8 +33,9 @@ date.textContent='Current';
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       // changes the data for current weather
+      var currentDate = moment(data.dt * 1000).format("MM-DD-YY");
+      date.textContent=currentDate;
       city.textContent = data.name;
       todayTemp.textContent = 'Temp:  ' + Math.floor(data.main.temp) + ' F°';
       humidity.textContent = 'Humidity:   ' + data.main.humidity + ' %';
@@ -54,7 +52,6 @@ date.textContent='Current';
         return response.json();
       })
       .then(function (data2) {
-        console.log(data2);
         uv.textContent ='UV index:  ' + data2.daily[0].uvi;
         day1Temp.textContent = Math.floor(data2.daily[1].temp.day) + 'F °';
         day2Temp.textContent = Math.floor(data2.daily[2].temp.day) + 'F °';
@@ -76,18 +73,32 @@ date.textContent='Current';
         var icon3 = data2.daily[3].weather[0].icon;
         var icon4 = data2.daily[4].weather[0].icon;
         var icon5 = data2.daily[5].weather[0].icon;
-        day1Icon.src = `./images/${icon1}.png`
-        day2Icon.src = `./images/${icon2}.png`
-        day3Icon.src = `./images/${icon3}.png`
-        day4Icon.src = `./images/${icon4}.png`
-        day5Icon.src = `./images/${icon5}.png`
-      });
-        
+        day1Icon.src = `./images/${icon1}.png`;
+        day2Icon.src = `./images/${icon2}.png`;
+        day3Icon.src = `./images/${icon3}.png`;
+        day4Icon.src = `./images/${icon4}.png`;
+        day5Icon.src = `./images/${icon5}.png`;
+        var day1date = document.getElementById('day1Date');
+        var day2date = document.getElementById('day2Date');
+        var day3date = document.getElementById('day3Date');
+        var day4date = document.getElementById('day4Date');
+        var day5date = document.getElementById('day5Date');
+        var date1 = moment(data2.daily[1].dt * 1000).format("MM-DD-YY");
+        var date2 = moment(data2.daily[2].dt * 1000).format("MM-DD-YY");
+        var date3 = moment(data2.daily[3].dt * 1000).format("MM-DD-YY");
+        var date4 = moment(data2.daily[4].dt * 1000).format("MM-DD-YY");
+        var date5 = moment(data2.daily[5].dt * 1000).format("MM-DD-YY");
+        day1date.textContent = date1;
+        day2date.textContent = date2;
+        day3date.textContent = date3;
+        day4date.textContent = date4;
+        day5date.textContent = date5;
+      });   
     });
 };
 
 
 
 
-searchBtn.addEventListener('click', current);
+searchBtn.addEventListener('click', weather);
 
