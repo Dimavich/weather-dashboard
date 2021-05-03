@@ -52,7 +52,9 @@ document.getElementById('hide2').style.visibility='visible';
         return response.json();
       })
       .then(function (data2) {
+        // uv index
         uv.textContent ='UV index:  ' + data2.daily[0].uvi;
+        // temp
         day1Temp.textContent = Math.floor(data2.daily[1].temp.day) + 'F °';
         day2Temp.textContent = Math.floor(data2.daily[2].temp.day) + 'F °';
         day3Temp.textContent = Math.floor(data2.daily[3].temp.day) + 'F °';
@@ -63,6 +65,7 @@ document.getElementById('hide2').style.visibility='visible';
         day3humid.textContent ='  ' + data2.daily[3].humidity + ' %';
         day4humid.textContent ='  ' + data2.daily[4].humidity + ' %';
         day5humid.textContent ='  ' + data2.daily[5].humidity + ' %';
+        // icons
         var day1Icon = document.getElementById('day1Icon');
         var day2Icon = document.getElementById('day2Icon');
         var day3Icon = document.getElementById('day3Icon');
@@ -78,6 +81,7 @@ document.getElementById('hide2').style.visibility='visible';
         day3Icon.src = `./images/${icon3}.png`;
         day4Icon.src = `./images/${icon4}.png`;
         day5Icon.src = `./images/${icon5}.png`;
+        // dates
         var day1date = document.getElementById('day1Date');
         var day2date = document.getElementById('day2Date');
         var day3date = document.getElementById('day3Date');
@@ -93,10 +97,22 @@ document.getElementById('hide2').style.visibility='visible';
         day3date.textContent = date3;
         day4date.textContent = date4;
         day5date.textContent = date5;
+        uvColor();
       });   
     });
 };
 
+// changes the background of uv index 
+function uvColor () {
+  var uvIndex = uv.textContent.slice(9);
+  if(uvIndex < 2){
+    uv.setAttribute('class', 'safe');
+  } else if (uvIndex < 7) {
+    uv.setAttribute('class', 'concern');
+  } else if (uvIndex > 8) {
+    uv.setAttribute('class', 'danger');
+  }
+};
 
 
 

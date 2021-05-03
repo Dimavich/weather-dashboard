@@ -112,4 +112,19 @@ input[type="text"]{
     color: #6c757d;
 }
 
+.safe {
+    background-color: #b7e4c7;
+    border-radius: 5px;
+}
+
+.concern {
+    background-color: #ffba08;
+    border-radius: 5px;
+}
+
+.danger {
+    color: white !important;
+    background-color: #c52233;
+    border-radius: 5px;
+}
 
