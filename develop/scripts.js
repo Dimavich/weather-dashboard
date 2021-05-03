@@ -3,6 +3,7 @@ document.getElementById('hide1').style.visibility='hidden';
 document.getElementById('hide2').style.visibility='hidden';
 var city = document.getElementById('city');
 var date = document.getElementById('date');
+var history = document.getElementById('history');
 var todayTemp = document.getElementById('today-temp');
 var humidity = document.getElementById('humidity');
 var wind = document.getElementById('wind');
@@ -98,6 +99,7 @@ document.getElementById('hide2').style.visibility='visible';
         day4date.textContent = date4;
         day5date.textContent = date5;
         uvColor();
+        saveToLocal();
       });   
     });
 };
@@ -114,7 +116,26 @@ function uvColor () {
   }
 };
 
+function saveToLocal (event) {
+  localStorage.setItem('item', JSON.stringify(searchVal.value));
+};
+
+function displayHistory () {
+  localVal = JSON.parse(localStorage.getItem('item'));
+  var histBtn = document.createElement('Button');
+  histBtn.textContent= localVal;
+  histBtn.setAttribute('id', 'history-btn');
+  document.getElementById('history').appendChild(histBtn);
+  
+  // event listener to search the history value
+  histBtn.addEventListener('click', function (event){
+    searchVal.value = localVal;
+    histBtn.style.visibility='hidden';
+    weather(event);
+  }) 
+};
 
 
 searchBtn.addEventListener('click', weather);
+displayHistory();
 

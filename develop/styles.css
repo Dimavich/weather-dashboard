@@ -128,3 +128,16 @@ input[type="text"]{
     border-radius: 5px;
 }
 
+#history-btn {
+    color: #6c757d;
+    border: 1px solid #bdbebf;
+    border-radius: 15px;
+    width: 150px;
+    font-size: 20px;
+}
+
+#history-btn:hover {
+    cursor: pointer;
+    background-color: #6c757d;
+    color: white;
+}
