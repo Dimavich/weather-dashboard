@@ -1,4 +1,3 @@
-# weather-dashboard
 
 # Weather Dashboard 
 this is a simple weather web app. You search for a city or a place and it will give you the following: 
