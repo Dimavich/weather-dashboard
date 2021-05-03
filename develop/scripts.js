@@ -109,7 +109,7 @@ function uvColor () {
   var uvIndex = uv.textContent.slice(9);
   if(uvIndex < 2){
     uv.setAttribute('class', 'safe');
-  } else if (uvIndex < 7) {
+  } else if (uvIndex < 8) {
     uv.setAttribute('class', 'concern');
   } else if (uvIndex > 8) {
     uv.setAttribute('class', 'danger');
@@ -135,7 +135,7 @@ function displayHistory () {
   }) 
 };
 
-
+// search event listener
 searchBtn.addEventListener('click', weather);
 displayHistory();
 
